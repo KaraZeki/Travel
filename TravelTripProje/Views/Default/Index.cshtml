@@ -1,0 +1,98 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="header-banner">
+    <div class="wrap">
+        <div class="banner">
+            <div class="indent">
+                <h2 class="indent-left margin-bot">Kolay Seyahatı Planlayın </h2>
+                <div class="banner-left">
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/glass.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Restorantlar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/flight.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Uçaklar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/group.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Yapılacaklar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/key.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Araç Kiralama</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="header_bottom_right_images">
+
+                    <div class="slider" style="width:650px;height:350px">
+                        <ul class="rslides" id="slider1">
+                            @foreach (var resimler in Model)
+                            {
+                                <li><img src="@resimler.BlogImage" style="width:650px;height:350px" alt=""></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>  
+
+<div class"content">
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="con-top">
+                <h3>Tatil seyahat şirketimize hoş geldiniz!..</h3>
+                <p>Merhabalar. Bu siteyi ben (Merhmet Zeki KARA) geliştirdim. Bu projeyi geliştirmemdeki amaç Asp.Net MVC alanında kendimi geliştirmektir. Sektör hayatımda ilerlemek istediğim bir alan olduğundan ve ayrıca mühendis olarak gireceğim şirketin bu alanda çalıştığından dolaya bu alanda çalışmalar yapıyorum. Umarım bu sitede başarılı bir site olur. Kendimi geliştirmek  ve ülkeyi muasır medeniyetler seviyesine çıkarmak için canla başla çalışıyorum. </p>
+            </div>
+            <div class="con-bot">
+                @Html.Action("partial1", "Default")
+                
+            </div>
+            <div class="grids">
+                <div class="box1">
+
+                    @Html.Action("partial3", "Default")
+                    <div class="padding1">
+                        <h4>En İyi Yerler</h4>
+                       @Html.Action("partial4_1","Default")
+                       @Html.Action("partial4_2","Default")
+                        
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

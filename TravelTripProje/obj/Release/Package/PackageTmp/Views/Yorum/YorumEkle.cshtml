@@ -1,0 +1,45 @@
+﻿@model TravelTripProje.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Ekle</h2>
+
+<div class="container">
+    <form class="form-group" method="post">
+
+        <div>
+            <label>Kullanıcı Adı</label>
+            @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.KullaniciAdi, "", new { @style = "color:green" })
+        </div>
+
+        <div>
+            <label>Mail</label>
+            @Html.TextBoxFor(m => m.Mail, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Mail, "", new { @style = "color:green" })
+        </div>
+        <div>
+            <label>Yorum</label>
+            @Html.TextAreaFor(m => m.Yorum, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Yorum, "", new { @style = "color:green" })
+        </div>
+
+        <div>
+            <label>Kategori</label>
+            @Html.DropDownListFor(m => m.Blog.ID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px">
+            <button class="btn btn-info" id="btnMusteriEkle">Yorum Ekle</button>
+        </div>
+        <script>
+            $('#btnMusteriEkle').click(function () {
+                var musteri = document.getElementById('#mst');
+                alert(' Müşteri Başarlı Bir Şekilde eklendi');
+            });
+        </script>
+    </form>
+
+</div>
+

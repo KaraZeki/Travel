@@ -1,0 +1,48 @@
+﻿@model TravelTripProje.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<form class="form-group" method="post">
+    <div class="container">
+        <h2>Blog Ekle</h2>
+        <div>
+            <label>Blog Başlığı</label>
+            @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" , @required = "required" })
+            @Html.ValidationMessageFor(m => m.Baslik, "", new { @style = "color:green" })
+        </div>
+
+        <div>
+            <label>Tarih</label>
+            @*@Html.TextBoxFor(m => m.Tarih.ToString("YYYY-MM-DD"), new { @type = "date", @required = "required" })*@
+            @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control", @required = "required" , @textmode = "Date" })
+            @Html.ValidationMessageFor(m => m.Tarih, "", new { @style = "color:green" })
+        </div>
+
+        <div>
+            <label>Aciklama</label>
+            @Html.TextAreaFor(m => m.Aciklama, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Aciklama, "", new { @style = "color:green" })
+        </div>
+        <div>
+            <label>Fotoğraf</label>
+            @Html.TextBoxFor(m => m.BlogImage, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.BlogImage, "", new { @style = "color:green" })
+        </div>
+
+        <div style="margin-top:15px">
+            <button class="btn btn-info" id="btnMusteriEkle">Blog Ekle</button>
+        </div>
+    </div>
+   
+    <script>
+        $('#btnMusteriEkle').click(function () {
+            var musteri = document.getElementById('#mst');
+            alert(' Müşteri Başarlı Bir Şekilde eklendi');
+        });
+    </script>
+</form>

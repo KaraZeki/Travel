@@ -1,0 +1,36 @@
+﻿@model TravelTripProje.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+
+
+    @using (Html.BeginForm("Guncelle", "Yorum", FormMethod.Post))
+    {
+        <div class="form-group">
+
+            @Html.LabelFor(m =>m.ID)
+            @Html.TextBoxFor(m => m.ID, new { @class = "form-control", @readonly = "readonly" })
+
+            @Html.LabelFor(m=>m.KullaniciAdi)
+            @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control" })
+
+
+            @Html.LabelFor(m => m.Mail)
+            @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+
+
+            @Html.LabelFor(m => m.Yorum)
+            @Html.TextAreaFor(m => m.Yorum, new { @class = "form-control" })
+            <br />
+            <br />
+            <div>
+                <button class="btn btn-warning">Yorum Güncelle</button>
+            </div>
+
+        </div>
+    }
+</div>
+
